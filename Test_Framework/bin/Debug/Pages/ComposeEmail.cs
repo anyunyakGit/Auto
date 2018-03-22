@@ -6,21 +6,19 @@ namespace Test_Framework
 {
     public class ComposeEmail : ComposeEmialPage
     {
-        public void ComposeEmailAndSendEmail(string generateTextField)
+        public void ComposeEmailAndSendEmail(string email, string generateTextField, string subject)
         {
             ClickOnButton(compose);
             WaitForElement(recepient);
-            SendKeysTo(recepient, DataHelper.userEmailValue);
+            SendKeysTo(recepient, email);
             SendKeysTo(recepient, Keys.Tab);
             WaitForElement(subjectBox);
-            SendKeysTo(subjectBox, DataHelper.GenerateUniqueName(8));
+            SendKeysTo(subjectBox, subject);
             SendKeysTo(subjectBox, Keys.Tab);
             SendKeysTo(textBox, generateTextField);
             ClickOnButton(sendButton);
             ClickOnButton(Inbox);
         }
-
-       
     }
 
     public class ComposeEmialPage : CommonMethodHelper
@@ -43,7 +41,7 @@ namespace Test_Framework
 
             if (webElement.Text.Contains(textToFind))
             {
-                return false;
+                return true;
             }
             return false;
         }

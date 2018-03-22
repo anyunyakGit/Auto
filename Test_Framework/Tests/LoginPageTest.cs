@@ -8,24 +8,20 @@ namespace Test_Framework
     [TestFixture]
     public class LoginPageTest : DriverHelper
     {
-        
+
         private Page page = new Page();
 
-
-       
-        [TestCase("nunyakandriy@gmail.com", "Andriy1989")]
-        [TestCase("nunyakandriy@gmail.com", "Andriy1989")]
-        public void LoginTest(string email, string password)
+        [TestCase("nunyakandriy@gmail.com", "Andriy1989", "Newly generated text for email ", "New text for subject ")]
+        [TestCase("nunyakandriygit@gmail.com", "&n|{dL-5", "Newly generated text for email", "New text for subject second one")]
+        public void LoginTest(string email, string password, string emailTextField, string subject)
         {
             page.loginPagePO().LoginToApplication(email, password);
-            string emialTextField = DataHelper.GenerateUniqueName(15);
-            page.OpenGmailT().OpenGmailPage();
-            page.composeEmailAndSend().ComposeEmailAndSendEmail(emialTextField);
 
-            AssertElementContains.TextIsInElements(emialTextField, ComposeEmialPage.emailSubjects);
+            page.OpenGmailT().OpenGmailPage();
+            page.composeEmailAndSend().ComposeEmailAndSendEmail(email, emailTextField, subject );
+
+            AssertElementContains.TextIsInElements(emailTextField, ComposeEmialPage.emailSubjects);
             page.signOut().SignOutFromGmail();
         }
-
-       
     }
 }
