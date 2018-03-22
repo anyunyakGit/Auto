@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\anyun\Downloads\Test_Framework\Test_Framework\Test_Framework\Test_Framework\bin\Debug\Test_Framework.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-03-15" time="13:20:14">
+  <environment nunit-version="2.6.3.13283" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Users\anyun\Downloads\Test_Framework\Test_Framework\Test_Framework\Test_Framework\bin\Debug\Tools\nunit" machine-name="TWINNS" user="anyun" user-domain="SOFTSERVE" />
+  <culture-info current-culture="uk-UA" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\anyun\Downloads\Test_Framework\Test_Framework\Test_Framework\Test_Framework\bin\Debug\Test_Framework.dll" executed="True" result="Failure" success="False" time="29.778" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Test_Framework" executed="True" result="Failure" success="False" time="29.773" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="LoginPageTest" executed="True" result="Failure" success="False" time="29.772" asserts="0">
+            <results>
+              <test-case name="Test_Framework.LoginPageTest.LoginTest" executed="True" result="Error" success="False" time="29.766" asserts="0">
+                <failure>
+                  <message><![CDATA[TearDown : OpenQA.Selenium.WebDriverException : A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://localhost:58763/session//window. The status of the exception was ConnectFailure, and the message was: Unable to connect to the remote server
+  ----> System.Net.WebException : Unable to connect to the remote server
+  ----> System.Net.Sockets.SocketException : No connection could be made because the target machine actively refused it 127.0.0.1:58763]]></message>
+                  <stack-trace><![CDATA[--TearDown
+at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
+at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
+at OpenQA.Selenium.Remote.DriverServiceCommandExecutor.Execute(Command commandToExecute)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Close()
+at Test_Framework.Helpers.DriverHelper.Close() in C:\Users\anyun\Downloads\Test_Framework\Test_Framework\Test_Framework\Test_Framework\Helpers\DriverHelper.cs:line 23
+--WebException
+at System.Net.HttpWebRequest.GetResponse()
+at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
+--SocketException
+at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
