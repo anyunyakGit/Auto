@@ -13,6 +13,8 @@ namespace Test_Framework
             if (wait == null)
                 wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             wait.Until(ExpectedConditions.ElementToBeClickable(locator));
+
+
         }
     }
 }
